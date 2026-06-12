@@ -1,0 +1,11 @@
+{
+  "changed_files": [
+    {
+      "path": "app/Http/Controllers/InvoiceController.php",
+      "diff_summary": "Added direct InvoiceModel query inside controller action",
+      "added_symbols": [
+        "InvoiceController::store"
+      ]
+    }
+  ]
+}

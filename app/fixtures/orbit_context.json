@@ -1,0 +1,48 @@
+{
+  "project_id": "demo/invoice-app",
+  "merge_request_iid": 12,
+  "changed_files": [
+    {
+      "path": "app/Http/Controllers/InvoiceController.php",
+      "diff_summary": "Added direct InvoiceModel query inside controller action",
+      "added_symbols": [
+        "InvoiceController::store"
+      ]
+    }
+  ],
+  "orbit_context": {
+    "context_id": "orbit-demo-context-001",
+    "entities": [
+      {
+        "id": "InvoiceController",
+        "type": "controller",
+        "path": "app/Http/Controllers/InvoiceController.php"
+      },
+      {
+        "id": "InvoiceService",
+        "type": "service",
+        "path": "app/Services/InvoiceService.php"
+      },
+      {
+        "id": "InvoiceModel",
+        "type": "model",
+        "path": "app/Models/InvoiceModel.php"
+      },
+      {
+        "id": "BillingEngine",
+        "type": "service",
+        "path": "app/Services/BillingEngine.php"
+      },
+      {
+        "id": "ReportExportService",
+        "type": "service",
+        "path": "app/Services/ReportExportService.php"
+      }
+    ],
+    "known_layers": [
+      "controller",
+      "service",
+      "model"
+    ]
+  }
+}

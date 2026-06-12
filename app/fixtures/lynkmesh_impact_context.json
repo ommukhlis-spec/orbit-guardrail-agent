@@ -1,0 +1,48 @@
+{
+  "graph_id": "demo-graph-001",
+  "context_pack_id": "sha256:demo-context-pack",
+  "changed_nodes": [
+    {
+      "symbol": "InvoiceController::store",
+      "layer": "controller",
+      "path": "app/Http/Controllers/InvoiceController.php"
+    }
+  ],
+  "new_edges": [
+    {
+      "from": "InvoiceController::store",
+      "to": "InvoiceModel::create",
+      "type": "calls",
+      "confidence": "confirmed",
+      "source": "diff"
+    }
+  ],
+  "expected_edges": [
+    {
+      "from": "InvoiceController::store",
+      "to": "InvoiceService::createInvoice",
+      "type": "calls",
+      "reason": "Controller should delegate business logic to service layer"
+    }
+  ],
+  "blast_radius": [
+    {
+      "symbol": "InvoiceService::createInvoice",
+      "path": "app/Services/InvoiceService.php",
+      "distance": 1,
+      "reason": "Existing service entrypoint bypassed"
+    },
+    {
+      "symbol": "BillingEngine::syncInvoice",
+      "path": "app/Services/BillingEngine.php",
+      "distance": 2,
+      "reason": "Depends on normalized invoice creation flow"
+    },
+    {
+      "symbol": "ReportExportService::monthlyInvoiceSummary",
+      "path": "app/Services/ReportExportService.php",
+      "distance": 2,
+      "reason": "Reads invoice state affected by creation flow"
+    }
+  ]
+}

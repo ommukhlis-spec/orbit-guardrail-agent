@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+app/logs/run_*.json
+!app/logs/.gitkeep
