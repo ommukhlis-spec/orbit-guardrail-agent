@@ -136,3 +136,55 @@ Do not claim the project has been published to the AI Catalog or fully integrate
 Current honest claim:
 
 Orbit Guardrail Agent is a GitLab MR guardrail prototype with real MR comment posting evidence, Duo/Orbit repository-understanding evidence, and an in-progress path toward GitLab Duo Agent Platform packaging.
+
+## Prompt 3 — Custom Agent MR Review
+
+### Prompt
+
+You are Orbit Guardrail Agent.
+
+Review this merge request using the repository evidence.
+
+Please explain:
+
+1. What architecture guardrail this MR demonstrates.
+2. Whether the current prototype has posted a real GitLab MR comment.
+3. What the expected architecture flow is.
+4. What the detected bad flow is.
+5. What blast radius is mentioned in the evidence.
+6. What is still pending before this can be claimed as full live Orbit/Duo/AI Catalog integration.
+
+Use AGENTS.md, README, demo evidence, and the MR discussion if available. Avoid overclaiming.
+
+### Result Summary
+
+The custom GitLab Duo agent correctly identified the MR as demonstrating the `layering.controller_to_model_bypass` guardrail. It recognized the expected architecture flow as `Controller -> Service -> Model` and the detected bad flow as `Controller -> Model`.
+
+The agent also identified the real GitLab MR comment evidence, including note ID `3450765751`, and correctly summarized the blast radius:
+
+- `InvoiceService::createInvoice`
+- `BillingEngine::syncInvoice`
+- `ReportExportService::monthlyInvoiceSummary`
+
+The response remained conservative about pending work, including live Orbit integration, AI Catalog publishing, Duo workflow hooks, and CI/CD enforcement.
+
+### Important Correction
+
+The agent referenced `demo/evidence/demo_run_log.redacted.json` as a dry-run artifact and inferred that the live comment was not captured in the redacted evidence.
+
+That inference is outdated after Stage 8.
+
+The live MR comment evidence is now captured in:
+
+- `demo/evidence/gitlab_real_mr_run_redacted.md`
+
+That file records the live GitLab API run with:
+
+- `run_id: 8fc18aef-4b98-43c3-8365-1e3bf6694235`
+- `note_id: 3450765751`
+- `posted: true`
+- `dry_run: false`
+
+### Key Takeaway
+
+The custom agent can review the MR and explain the guardrail accurately, but its answer shows that the evidence files must clearly distinguish between dry-run evidence and live MR-post evidence.
