@@ -153,3 +153,15 @@ Useful links:
 
 Current safe status: local mock workflow and GitLab API dry-run mode are implemented. GitLab Orbit/Duo/AI Catalog integration remains pending until the hackathon-provisioned project is available.
 <!-- STAGE4_EVIDENCE_POLISH_END -->
+
+## GitLab real MR demo prep
+
+Stage 5 prepares the project for a real GitLab Merge Request demonstration. The repository now includes a checklist, evidence template, and helper script for creating a demo MR that intentionally bypasses the service layer.
+
+Start here:
+
+- [Stage 5 GitLab Real MR Demo Prep](docs/stage5_gitlab_real_mr_prep.md)
+- [GitLab Real MR Demo Checklist](demo/gitlab_real_mr_checklist.md)
+- [GitLab Real MR Evidence Template](demo/evidence/gitlab_real_mr_evidence_template.md)
+
+This stage prepares the GitLab MR workflow. Final GitLab Orbit / Duo Agent Platform integration remains pending until the hackathon project is provisioned.

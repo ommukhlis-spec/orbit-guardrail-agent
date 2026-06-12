@@ -92,3 +92,19 @@ Pending claim:
 
 > Full GitLab Orbit/Duo/AI Catalog integration is pending the dedicated GitLab project and Showcase provisioning.
 <!-- STAGE4_EVIDENCE_STATUS_END -->
+
+## Stage 5 update — GitLab real MR prep
+
+The repository now includes a repeatable path for rehearsing a real GitLab Merge Request demonstration:
+
+- demo project setup helper: `scripts/prepare_real_mr_demo.ps1`
+- real MR checklist: `demo/gitlab_real_mr_checklist.md`
+- evidence template: `demo/evidence/gitlab_real_mr_evidence_template.md`
+- preparation doc: `docs/stage5_gitlab_real_mr_prep.md`
+
+Current status remains conservative:
+
+- Local mock mode works.
+- GitLab API dry-run mode works.
+- Real GitLab MR comment mode is prepared.
+- GitLab Orbit / Duo / AI Catalog integration is still pending hackathon provisioning.

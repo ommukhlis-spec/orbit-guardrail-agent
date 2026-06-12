@@ -91,3 +91,14 @@ Recommended recording order:
 
 Do not show private tokens, real customer data, browser cookies, or local-only secrets.
 <!-- STAGE4_RECORDING_PLAN_END -->
+
+## Optional real GitLab MR rehearsal
+
+Before the final Orbit/Duo integration is available, rehearse the MR comment flow with a real GitLab project:
+
+1. Use `scripts/prepare_real_mr_demo.ps1` to create a clean demo app and a bad branch.
+2. Push both branches to a GitLab project.
+3. Open a Merge Request using `demo/mr_description.md`.
+4. Run `python -m app.main --mode gitlab_api --project-id "GROUP/PROJECT" --mr-iid <IID> --dry-run`.
+5. If the endpoint is correct, run live mode with `GITLAB_TOKEN` set locally.
+6. Capture the MR diff and posted comment for evidence.
