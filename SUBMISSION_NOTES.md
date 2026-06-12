@@ -39,3 +39,32 @@ Still pending for final Showcase eligibility:
 - real GitLab Orbit API/CLI/skill interface integration,
 - Duo Agent Platform wrapper or flow,
 - AI Catalog publication.
+
+<!-- STAGE3_DEMO_SCENARIO_START -->
+## Stage 3 Demo Scenario
+
+A demo repository snapshot has been added under `demo/`.
+
+The demo shows a small bad merge request where `InvoiceController` bypasses `InvoiceService` and calls `InvoiceModel` directly.
+
+This is the main visual scenario for the hackathon demo:
+
+```text
+Before: InvoiceController -> InvoiceService -> InvoiceModel
+After:  InvoiceController -> InvoiceModel
+```
+
+Why it matters:
+
+- The local diff is small.
+- The architecture impact is repo-wide.
+- LynkMesh-style context provides blast-radius evidence.
+- The agent produces a reviewer-ready MR briefing instead of generic code-review text.
+
+Current status:
+
+- Mock flow works locally.
+- GitLab API dry-run mode is available.
+- Real GitLab posting should be tested after a dedicated/provisioned GitLab project or demo MR is available.
+- Orbit/Duo/AI Catalog integration is still pending hackathon provisioning.
+<!-- STAGE3_DEMO_SCENARIO_END -->

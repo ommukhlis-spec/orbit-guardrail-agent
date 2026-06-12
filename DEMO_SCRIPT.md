@@ -39,3 +39,36 @@ Show `app/logs/run_*.json` with context IDs and rules evaluated.
 ## 2:45–3:00 — Close
 
 Orbit Guardrail Agent makes GitLab Duo flows architecture-aware by enriching Orbit context with LynkMesh graph-backed impact context.
+
+<!-- STAGE3_DEMO_FLOW_START -->
+## Stage 3 Demo Flow
+
+Use this script once the demo repository and mock workflow are committed.
+
+1. Open `demo/mr_diff.md` and show the tiny code change.
+2. Open `demo/invoice_app_before/app/Http/Controllers/InvoiceController.php`.
+3. Show the expected flow: `Controller -> Service -> Model`.
+4. Open `demo/invoice_app_after_bad_mr/app/Http/Controllers/InvoiceController.php`.
+5. Show the bad flow: `Controller -> Model`.
+6. Run:
+
+```bash
+python -m app.main --mode mock --out demo/sample_mr_comment.md
+```
+
+7. Open `demo/sample_mr_comment.md` and highlight:
+   - architecture violation,
+   - expected vs detected flow,
+   - blast radius,
+   - suggested tests,
+   - reviewer checklist,
+   - context evidence.
+8. Run GitLab API dry-run:
+
+```bash
+python -m app.main --mode gitlab_api --project-id demo/group --mr-iid 12 --dry-run
+```
+
+9. Show the generated GitLab MR notes endpoint.
+10. Explain that final hackathon mode replaces the mock Orbit adapter with GitLab Orbit/Duo integration after provisioning.
+<!-- STAGE3_DEMO_FLOW_END -->

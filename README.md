@@ -100,3 +100,38 @@ Notes:
 - `PROJECT_ID_OR_PATH` may be a numeric project ID or a namespace path such as `group/project`.
 - This posts a top-level merge request note through the GitLab API. Line-level discussions can be added later if needed.
 - Do not commit tokens, `.env` files, private project IDs, or screenshots containing secrets.
+
+<!-- STAGE3_DEMO_SCENARIO_START -->
+## Demo Scenario: Intentional Architecture Violation
+
+This repository includes a small demo application under `demo/` to make the guardrail workflow easy to understand.
+
+The demo compares:
+
+- `demo/invoice_app_before/` — expected layered flow: `Controller -> Service -> Model`.
+- `demo/invoice_app_after_bad_mr/` — intentionally bad MR flow: `Controller -> Model`.
+
+The hero workflow is:
+
+```text
+small MR diff
+-> Orbit-style changed-file context
+-> LynkMesh-style dependency and blast-radius context
+-> guardrail engine
+-> reviewer-ready MR briefing
+```
+
+Run the local mock demo:
+
+```bash
+python -m app.main --mode mock --out demo/sample_mr_comment.md
+```
+
+Run GitLab API mode without posting a real comment:
+
+```bash
+python -m app.main --mode gitlab_api --project-id demo/group --mr-iid 12 --dry-run
+```
+
+The final hackathon integration should replace mock Orbit context with GitLab Orbit API, CLI, or skill-interface context and run inside the GitLab Duo/AI Catalog workflow.
+<!-- STAGE3_DEMO_SCENARIO_END -->
