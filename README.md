@@ -135,3 +135,21 @@ python -m app.main --mode gitlab_api --project-id demo/group --mr-iid 12 --dry-r
 
 The final hackathon integration should replace mock Orbit context with GitLab Orbit API, CLI, or skill-interface context and run inside the GitLab Duo/AI Catalog workflow.
 <!-- STAGE3_DEMO_SCENARIO_END -->
+
+<!-- STAGE4_EVIDENCE_POLISH_START -->
+## Stage 4 Evidence and Demo Polish
+
+The repository now includes a public-safe demo evidence pack under `demo/evidence/`.
+
+Useful links:
+
+- `demo/mr_diff.md` — tiny bad MR used in the demo.
+- `demo/invoice_app_before/` — expected layered architecture.
+- `demo/invoice_app_after_bad_mr/` — intentional service-layer bypass.
+- `demo/sample_mr_comment.md` — generated reviewer-ready briefing.
+- `demo/evidence/demo_run_log.redacted.json` — redacted sample run log.
+- `demo/evidence/context_evidence_matrix.md` — maps claims to evidence artifacts.
+- `demo/video_shot_list.md` — 3-minute demo recording plan.
+
+Current safe status: local mock workflow and GitLab API dry-run mode are implemented. GitLab Orbit/Duo/AI Catalog integration remains pending until the hackathon-provisioned project is available.
+<!-- STAGE4_EVIDENCE_POLISH_END -->

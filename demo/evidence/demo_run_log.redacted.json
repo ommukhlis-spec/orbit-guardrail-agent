@@ -1,0 +1,61 @@
+{
+  "run_id": "stage4-demo-redacted-001",
+  "created_at": "2026-06-12T00:00:00Z",
+  "mode": "mock",
+  "project_id": "demo/invoice-app",
+  "merge_request_iid": 12,
+  "orbit_context_id": "orbit-demo-context-001",
+  "lynkmesh_context_pack_id": "sha256:demo-context-pack",
+  "rules_evaluated": [
+    "layering.controller_to_model_bypass"
+  ],
+  "violations": [
+    {
+      "rule_id": "layering.controller_to_model_bypass",
+      "title": "Controller should not directly access Model when a Service layer exists",
+      "severity": "warning",
+      "file": "app/Http/Controllers/InvoiceController.php",
+      "source": "InvoiceController::store",
+      "target": "InvoiceModel::create",
+      "expected_flow": "Controller → Service → Model",
+      "detected_flow": "Controller → Model",
+      "reason": "Existing service candidate `InvoiceService` is bypassed by direct model access."
+    }
+  ],
+  "blast_radius": [
+    {
+      "symbol": "InvoiceService::createInvoice",
+      "path": "app/Services/InvoiceService.php",
+      "distance": 1,
+      "reason": "Existing service entrypoint bypassed"
+    },
+    {
+      "symbol": "BillingEngine::syncInvoice",
+      "path": "app/Services/BillingEngine.php",
+      "distance": 2,
+      "reason": "Depends on normalized invoice creation flow"
+    },
+    {
+      "symbol": "ReportExportService::monthlyInvoiceSummary",
+      "path": "app/Services/ReportExportService.php",
+      "distance": 2,
+      "reason": "Reads invoice state affected by creation flow"
+    }
+  ],
+  "blast_radius_count": 3,
+  "comment_output_path": "demo/sample_mr_comment.md",
+  "comment_posted": true,
+  "gitlab": {
+    "posted": false,
+    "dry_run": true,
+    "endpoint_shape": "https://gitlab.com/api/v4/projects/<project>/merge_requests/<iid>/notes",
+    "note_id": null,
+    "web_url": null
+  },
+  "safety": {
+    "uses_real_customer_data": false,
+    "contains_tokens_or_secrets": false,
+    "contains_llm_inference": false,
+    "production_ready_ci_enforcement": false
+  }
+}

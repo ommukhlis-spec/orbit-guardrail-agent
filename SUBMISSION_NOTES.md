@@ -68,3 +68,27 @@ Current status:
 - Real GitLab posting should be tested after a dedicated/provisioned GitLab project or demo MR is available.
 - Orbit/Duo/AI Catalog integration is still pending hackathon provisioning.
 <!-- STAGE3_DEMO_SCENARIO_END -->
+
+<!-- STAGE4_EVIDENCE_STATUS_START -->
+## Stage 4 Evidence Status
+
+Stage 4 adds public-safe evidence and demo-polish assets.
+
+Added:
+
+- `demo/evidence/demo_run_log.redacted.json`
+- `demo/evidence/context_evidence_matrix.md`
+- `demo/evidence/submission_checklist.md`
+- `demo/video_shot_list.md`
+- `docs/stage4_evidence_artifacts.md`
+
+Use these artifacts to support the Devpost project page and final demo video.
+
+Safe current claim:
+
+> The project has a deterministic local MVP, a clear before/after demo scenario, tests, generated MR briefing output, redacted sample run evidence, and GitLab API dry-run mode.
+
+Pending claim:
+
+> Full GitLab Orbit/Duo/AI Catalog integration is pending the dedicated GitLab project and Showcase provisioning.
+<!-- STAGE4_EVIDENCE_STATUS_END -->

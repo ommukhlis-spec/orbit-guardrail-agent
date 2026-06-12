@@ -72,3 +72,22 @@ python -m app.main --mode gitlab_api --project-id demo/group --mr-iid 12 --dry-r
 9. Show the generated GitLab MR notes endpoint.
 10. Explain that final hackathon mode replaces the mock Orbit adapter with GitLab Orbit/Duo integration after provisioning.
 <!-- STAGE3_DEMO_FLOW_END -->
+
+<!-- STAGE4_RECORDING_PLAN_START -->
+## Stage 4 Recording Plan
+
+Use `demo/video_shot_list.md` as the final recording plan for the 3-minute Devpost video.
+
+Recommended recording order:
+
+1. Show `demo/mr_diff.md`.
+2. Show expected architecture under `demo/invoice_app_before/`.
+3. Show bad MR under `demo/invoice_app_after_bad_mr/`.
+4. Run mock mode.
+5. Open `demo/sample_mr_comment.md`.
+6. Show `demo/evidence/demo_run_log.redacted.json`.
+7. Run GitLab API dry-run.
+8. Close with the Orbit + LynkMesh positioning.
+
+Do not show private tokens, real customer data, browser cookies, or local-only secrets.
+<!-- STAGE4_RECORDING_PLAN_END -->
