@@ -26,3 +26,16 @@ Showcase Track
 ## Safe Framing
 
 The prototype demonstrates a deterministic architecture guardrail workflow and is designed to integrate with GitLab Orbit/Duo once the hackathon project surface is available.
+
+## Integration status
+
+Current implemented modes:
+
+- `mock`: deterministic local flow that renders the MR guardrail briefing to markdown.
+- `gitlab_api`: posts the generated briefing as a top-level GitLab Merge Request note. This proves the workflow action surface while Orbit/Duo provisioning is pending.
+
+Still pending for final Showcase eligibility:
+
+- real GitLab Orbit API/CLI/skill interface integration,
+- Duo Agent Platform wrapper or flow,
+- AI Catalog publication.

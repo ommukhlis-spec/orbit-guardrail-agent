@@ -65,3 +65,38 @@ Mock MR fixture
 ## Safe Claims
 
 This prototype detects one narrow architecture rule. It does not perform full autonomous review, does not automatically fix code, and does not prove runtime behavior.
+
+## GitLab API comment mode
+
+The first prototype mode writes the generated guardrail briefing to a local markdown file. The next integration step is `gitlab_api` mode, which posts the same reviewer-ready briefing as a merge request note.
+
+This mode still uses the mock Orbit and LynkMesh fixtures for context. Its purpose is to prove the workflow action surface: generate a guardrail briefing and post it to a real GitLab Merge Request.
+
+Dry run, no token required:
+
+```bash
+python -m app.main --mode gitlab_api --project-id <PROJECT_ID_OR_PATH> --mr-iid <MR_IID> --dry-run
+```
+
+Real post:
+
+```bash
+set GITLAB_TOKEN=<your_token>
+python -m app.main --mode gitlab_api --project-id <PROJECT_ID_OR_PATH> --mr-iid <MR_IID>
+```
+
+Optional environment variables:
+
+```bash
+GITLAB_BASE_URL=https://gitlab.com
+GITLAB_PROJECT_ID=<PROJECT_ID_OR_PATH>
+GITLAB_MR_IID=<MR_IID>
+GITLAB_TOKEN=<token>
+```
+
+Notes:
+
+- `MR_IID` means the merge request IID shown inside a project, not the global merge request ID.
+- `PROJECT_ID_OR_PATH` may be a numeric project ID or a namespace path such as `group/project`.
+- This posts a top-level merge request note through the GitLab API. Line-level discussions can be added later if needed.
+- Do not commit tokens, `.env` files, private project IDs, or screenshots containing secrets.
