@@ -188,3 +188,74 @@ That file records the live GitLab API run with:
 ### Key Takeaway
 
 The custom agent can review the MR and explain the guardrail accurately, but its answer shows that the evidence files must clearly distinguish between dry-run evidence and live MR-post evidence.
+
+## Prompt 4 — Corrected Evidence Separation
+
+### Prompt
+
+Please re-check the repository evidence.
+
+Important correction:
+
+- `demo/evidence/demo_run_log.redacted.json` is dry-run evidence.
+- `demo/evidence/gitlab_real_mr_run_redacted.md` is the live GitLab MR posting evidence.
+- The live evidence records `posted: true`, `dry_run: false`, and note ID `3450765751`.
+
+Please update your previous assessment and clearly separate:
+
+1. Dry-run evidence.
+2. Live MR comment evidence.
+3. What is proven.
+4. What remains pending.
+
+Avoid overclaiming.
+
+### Result Summary
+
+The custom GitLab Duo agent corrected its previous assessment and clearly separated the dry-run evidence from the live MR comment evidence.
+
+It identified `demo/evidence/demo_run_log.redacted.json` as dry-run / local rendering evidence only:
+
+- `posted: false`
+- `dry_run: true`
+- `note_id: null`
+- local comment rendering only
+
+It identified `demo/evidence/gitlab_real_mr_run_redacted.md` as the live GitLab MR posting evidence:
+
+- `mode: gitlab_api`
+- `posted: true`
+- `dry_run: false`
+- `note_id: 3450765751`
+- `run_id: 8fc18aef-4b98-43c3-8365-1e3bf6694235`
+- project: `gitlab-ai-hackathon/transcend/39119538`
+- MR: `!1`
+
+The agent also stated that the live post is corroborated by the actual GitLab MR note, and that the note contains the full guardrail briefing.
+
+### What The Agent Recognized As Proven
+
+- The guardrail engine detects the `Controller -> Model` bypass in the fixture data.
+- `GitLabMRCommentAdapter` successfully posted a real MR comment to GitLab.
+- The live MR comment includes the three-symbol blast radius:
+  - `InvoiceService::createInvoice`
+  - `BillingEngine::syncInvoice`
+  - `ReportExportService::monthlyInvoiceSummary`
+- The dry-run path works as a safe validation mode.
+
+### What The Agent Recognized As Pending
+
+- Live GitLab Orbit context ingestion.
+- Live LynkMesh graph query integration.
+- GitLab Duo workflow hook wiring.
+- AI Catalog publication.
+- CI/CD enforcement.
+- Automatic trigger execution.
+
+### Important Note
+
+The agent said screenshot artifacts could not be independently verified from its current context. This is treated as an agent visibility limitation, not a project evidence failure, because the screenshot files were committed separately under `demo/screenshots/`.
+
+### Key Takeaway
+
+The custom GitLab Duo agent can now correctly distinguish local dry-run evidence from live GitLab MR posting evidence. This makes the Stage 9 evidence stronger and safer for submission because it confirms the prototype's proven scope without claiming unfinished Orbit/Duo/AI Catalog integration.
