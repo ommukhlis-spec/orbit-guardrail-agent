@@ -165,3 +165,21 @@ Start here:
 - [GitLab Real MR Evidence Template](demo/evidence/gitlab_real_mr_evidence_template.md)
 
 This stage prepares the GitLab MR workflow. Final GitLab Orbit / Duo Agent Platform integration remains pending until the hackathon project is provisioned.
+
+<!-- STAGE9_ORBIT_DUO_EXPLORATION_START -->
+## Stage 9 — Orbit/Duo exploration
+
+The prototype has now demonstrated a real GitLab workflow action by posting an architecture guardrail briefing to Merge Request `!1` in the provisioned GitLab Transcend workspace.
+
+Stage 9 explores the remaining Showcase packaging path: representing the workflow as a GitLab Duo/Orbit agent, flow, skill, or external agent entry and preparing AI Catalog submission notes.
+
+New Stage 9 assets:
+
+- `AGENTS.md` — project instructions for GitLab Duo / agentic workflow context.
+- `docs/stage9_orbit_duo_agentic_workflow.md` — exploration plan and safe claims.
+- `demo/orbit_duo_prompts.md` — prompts for Duo/Orbit exploration.
+- `demo/evidence/orbit_duo_exploration_log.md` — evidence log template.
+- `demo/evidence/ai_catalog_submission_notes.md` — draft AI Catalog packaging notes.
+
+Current limitation: real GitLab Orbit/Duo custom agent or AI Catalog publication remains pending until verified with evidence.
+<!-- STAGE9_ORBIT_DUO_EXPLORATION_END -->

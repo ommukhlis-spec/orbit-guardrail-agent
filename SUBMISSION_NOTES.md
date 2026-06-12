@@ -108,3 +108,25 @@ Current status remains conservative:
 - GitLab API dry-run mode works.
 - Real GitLab MR comment mode is prepared.
 - GitLab Orbit / Duo / AI Catalog integration is still pending hackathon provisioning.
+
+<!-- STAGE9_SUBMISSION_NOTES_START -->
+## Stage 9 — Orbit/Duo and AI Catalog readiness
+
+Current proof:
+
+- real GitLab MR comment posted to `!1`,
+- redacted evidence committed,
+- screenshots committed,
+- GitHub and GitLab branches updated.
+
+Next proof needed for final Showcase readiness:
+
+- verify the best AI Catalog packaging path,
+- publish or register the agent/flow/skill if the UI supports it,
+- capture the publication link or submission evidence,
+- avoid claiming completed Orbit/Duo custom integration until verified.
+
+Safe Devpost wording:
+
+> Orbit Guardrail Agent has demonstrated a real GitLab MR workflow action by posting an architecture guardrail briefing to MR `!1`. The next step is packaging this workflow as a GitLab Duo/Orbit agent, flow, skill, or external agent entry and publishing it to the AI Catalog.
+<!-- STAGE9_SUBMISSION_NOTES_END -->
