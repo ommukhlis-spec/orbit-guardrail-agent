@@ -34,3 +34,17 @@
 - [ ] Do not claim production-ready CI enforcement.
 - [ ] Do not claim complete automated code review.
 - [ ] Do not claim LynkMesh replaces GitLab Orbit.
+
+## Stage 12 Submission Polish Checklist
+
+- [x] Real GitLab MR comment evidence captured.
+- [x] Real MR screenshots captured.
+- [x] Custom GitLab Duo agent created.
+- [x] Custom agent review evidence captured.
+- [x] Corrected dry-run vs live-post evidence distinction captured.
+- [x] AI Catalog tab visibility captured.
+- [x] AI Catalog private-agent state documented.
+- [x] No-overclaiming notes added.
+- [ ] Devpost links updated.
+- [ ] Final demo video recorded.
+- [ ] Final submission text reviewed.

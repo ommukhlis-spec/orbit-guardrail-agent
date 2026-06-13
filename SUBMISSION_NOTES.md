@@ -130,3 +130,36 @@ Safe Devpost wording:
 
 > Orbit Guardrail Agent has demonstrated a real GitLab MR workflow action by posting an architecture guardrail briefing to MR `!1`. The next step is packaging this workflow as a GitLab Duo/Orbit agent, flow, skill, or external agent entry and publishing it to the AI Catalog.
 <!-- STAGE9_SUBMISSION_NOTES_END -->
+
+## Final Submission Evidence Summary
+
+The project has accumulated the following evidence:
+
+- Real GitLab MR comment evidence:
+  - `demo/evidence/gitlab_real_mr_run_redacted.md`
+  - `demo/screenshots/gitlab_mr_guardrail_comment_full.png`
+
+- Custom GitLab Duo agent evidence:
+  - `demo/evidence/custom_agent_creation_evidence.md`
+  - `demo/evidence/orbit_duo_exploration_log.md`
+  - `demo/screenshots/gitlab_custom_agent_created.png`
+
+- AI Catalog feasibility evidence:
+  - `demo/evidence/ai_catalog_feasibility_evidence.md`
+  - `demo/screenshots/gitlab_ai_catalog_orbit_guardrail_agent_private.png`
+
+- Architecture/context evidence:
+  - `demo/evidence/context_evidence_matrix.md`
+  - `demo/evidence/demo_run_log.redacted.json`
+
+Submission-safe claim:
+
+`Orbit Guardrail Agent posts a real architecture guardrail briefing to a GitLab MR, has a custom GitLab Duo agent created in the hackathon workspace, and appears in the AI Catalog tab as a private custom agent.`
+
+Do not claim:
+
+- public AI Catalog publication,
+- automatic MR trigger execution,
+- live GitLab Orbit API ingestion,
+- live LynkMesh graph query integration,
+- production-ready CI enforcement.

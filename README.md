@@ -183,3 +183,19 @@ New Stage 9 assets:
 
 Current limitation: real GitLab Orbit/Duo custom agent or AI Catalog publication remains pending until verified with evidence.
 <!-- STAGE9_ORBIT_DUO_EXPLORATION_END -->
+
+## Current Evidence Status
+
+Orbit Guardrail Agent currently demonstrates:
+
+- a deterministic architecture guardrail engine for merge request review,
+- a real GitLab MR comment posted through the GitLab Notes API,
+- a custom GitLab Duo agent created in the provisioned hackathon workspace,
+- GitLab Duo/Orbit-assisted repository understanding and evidence review,
+- AI Catalog visibility as a private custom agent in the hackathon workspace.
+
+The current implementation intentionally avoids overclaiming. The Orbit-style and LynkMesh-style adapters use deterministic local fixtures for the demo scenario. Live GitLab Orbit API ingestion, automatic trigger execution, public AI Catalog publication, and production CI/CD enforcement remain pending.
+
+Safe summary:
+
+`Orbit Guardrail Agent is a GitLab MR guardrail prototype with real MR comment evidence, custom Duo agent evidence, and private AI Catalog visibility in the provisioned hackathon workspace.`
